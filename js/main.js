@@ -35,6 +35,19 @@ function getTypePokemon(pokemonTypes) {
     .join(' | ')
 }
 
+function getAbilitiesPokemon(abilities) {
+  return abilities.reduce((acc, abilityInfo) => {
+    acc += `<li> ${abilityInfo.ability.name}</li>`
+    return acc
+  }, '')
+}
+
+function getStatsPokemon(stats) {
+  return stats.reduce((acc, statsInfo) => {
+    acc += `<li>${statsInfo.stat.name}: ${statsInfo.base_stat}</li>`
+    return acc
+  }, '')
+}
 const PokemonId = getPokemonIdByGeneretion(id)
 
 PokemonId.then(values => {
@@ -46,9 +59,16 @@ PokemonId.then(values => {
   Promise.all(pokemons).then(pokemonList => {
     const main = document.querySelector('main')
     const pokemon = pokemonList.reduce((accumulator, pokemon) => {
-      accumulator += `<p> ID: ${pokemon.id} </p>
+      accumulator += `
+      <img src="${pokemon.sprites.front_default}" alt="">
+      <p>ID: ${pokemon.id} </p>
       <p>Pokemon: ${pokemon.name} </p>
-      <p>Type: ${getTypePokemon(pokemon.types)} </p>`
+      <p>Type: ${getTypePokemon(pokemon.types)} </p>
+      <p>Habilidades: </p>
+      <ul>${getAbilitiesPokemon(pokemon.abilities)}</ul>
+      <p>Stats</p>
+      <ul>${getStatsPokemon(pokemon.stats)}</ul>
+      <br/>`
       return accumulator
     }, '')
 
