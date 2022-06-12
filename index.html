@@ -4,10 +4,52 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla&family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Document</title>
   </head>
   <body>
-    <main></main>
+    <header id="header">
+      <img
+        src="./assets/img/pokemon-logo.png"
+        alt="Imagem do logotipo do pokemon"
+      />
+      <nav>
+        <ul class="nav-menu">
+          <li>
+            <a class="title" href=""> Home </a>
+          </li>
+          <li>
+            <a class="title" href=""> Pokédex </a>
+          </li>
+          <li>
+            <a class="title" href=""> Legendaries </a>
+          </li>
+          <li>
+            <a class="title" href=""> Documentation </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div id="principal">
+        <section class="search-pokemon">
+          <h3 class="search-title">
+            800 <span>Pokemons</span> for you to choose your favorite
+          </h3>
+        </section>
+        <section class="pokemon-grid"></section>
+      </div>
+    </main>
     <script src="./js/main.js"></script>
   </body>
 </html>
