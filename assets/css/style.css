@@ -208,20 +208,28 @@ main{
 }
 
 .filters-pokemons button{
-  position: static;
+  position: relative;
 
   display: inline-block;
   background: #F2F2F2;
+  background-image: url(/assets/img/icon/chevron-down.svg);
 
   width: 8.45rem;
+  height: 1.31rem;
   margin-left: 4.07rem;
 
   border-style:none;
-  
+
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+}
+
+.filters-pokemons button span{
+ position: absolute;
+ top: 0.3rem;
+ right: 0.5rem;
 }
 
 .check-type-pokemon{
