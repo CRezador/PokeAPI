@@ -43,9 +43,21 @@
     <main>
       <div id="principal">
         <section class="search-pokemon">
-          <h3 class="search-title">
-            800 <span>Pokemons</span> for you to choose your favorite
-          </h3>
+          <form action="" method="POST" id="form-pokemon">
+            <h3 class="search-title">
+              800 <span>Pokemons</span> for you to choose your favorite
+            </h3>
+            <input
+              type="search"
+              name="search"
+              id="search-pokemon"
+              placeholder="Find your Pokemon"
+            />
+            <div class="filters-pokemons">
+              <button type="button">Tipo</button>
+              <div class="check-type-pokemon"></div>
+            </div>
+          </form>
         </section>
         <section class="pokemon-grid"></section>
       </div>

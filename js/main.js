@@ -2,6 +2,20 @@
 let id = 1;
 
 //Funções Assíncronas
+
+async function getTypes(){
+  try {
+    const types = await fetch(
+      `https://pokeapi.co/api/v2/type/`
+    ).then(response => {
+      return response.json()
+    })
+    return types.results;
+  } catch (error) {
+    console.error(error)
+  }
+}
+
 //Chamando a API pela Geração
 async function getPokemonIdByGeneretion() {
   try {
@@ -43,6 +57,28 @@ function getTypePokemon(pokemonTypes) {
   return acc;
 }
 
+function getAllTypes(types){
+
+ 
+  
+  Promise.resolve(types).then(typeList =>{
+
+    const run = document.querySelector('.check-type-pokemon');
+    const type =
+    typeList.reduce((acc, type) =>{
+        acc += `
+        <div class="check-container">
+        <input type="checkbox" name="${type.name}" value="${type.name}" />
+        <label>${type.name}</label>
+        </div>`;
+
+        return acc;
+    }, '');
+
+    run.innerHTML = type
+  })
+    
+}
 
 function getAbilitiesPokemon(abilities) {
   return abilities.reduce((acc, abilityInfo) => {
@@ -115,4 +151,6 @@ async function createPokemon(PokemonId) {
 }
 const PokemonId = getPokemonIdByGeneretion()
 
+const filterTypes = getTypes()
+getAllTypes(filterTypes)
 createPokemon(PokemonId)
