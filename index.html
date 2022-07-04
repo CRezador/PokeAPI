@@ -16,7 +16,7 @@
     />
     <link rel="stylesheet" href="./assets/img/icon/style.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Document</title>
+    <title>PokeAPI</title>
   </head>
   <body>
     <header id="header">
@@ -55,16 +55,19 @@
               placeholder="Find your Pokemon"
             />
             <div class="filters-pokemons">
-              <button type="button" name="type">
-                Tipo <span class="icon-chevron-down"></span>
-              </button>
-              <div class="check-type-pokemon"></div>
+              <div class="dropdown-type">
+                <button type="button" name="type">
+                  Tipo <span class="icon-chevron-down"></span>
+                </button>
+                <div class="check-type-pokemon"></div>
+              </div>
             </div>
           </form>
         </section>
         <section class="pokemon-grid"></section>
       </div>
     </main>
-    <script src="./js/main.js"></script>
+    <script src="./js/services/main.js"></script>
+    <script src="./js/utils/main.js"></script>
   </body>
 </html>

@@ -17,7 +17,7 @@ async function getTypes(){
 }
 
 //Chamando a API pela Geração
-async function getPokemonIdByGeneretion() {
+async function getPokemons() {
   try {
     const pokemon = await fetch(
       `https://pokeapi.co/api/v2/pokemon/?limit=9&offset=2`
@@ -58,8 +58,6 @@ function getTypePokemon(pokemonTypes) {
 }
 
 function getAllTypes(types){
-
- 
   
   Promise.resolve(types).then(typeList =>{
 
@@ -149,8 +147,8 @@ async function createPokemon(PokemonId) {
     console.error(error)
   }
 }
-const PokemonId = getPokemonIdByGeneretion()
-
+const PokemonId = getPokemons()
 const filterTypes = getTypes()
+
 getAllTypes(filterTypes)
 createPokemon(PokemonId)
